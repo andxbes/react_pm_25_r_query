@@ -69,9 +69,9 @@ app.get('/events/:id', async (req, res) => {
       .json({ message: `For the id ${id}, no event could be found.` });
   }
 
-  setTimeout(() => {
-    res.json({ event });
-  }, 1000);
+  // setTimeout(() => {
+  res.json({ event });
+  // }, 1000);
 });
 
 app.post('/events', async (req, res) => {
@@ -81,7 +81,7 @@ app.post('/events', async (req, res) => {
     return res.status(400).json({ message: 'Event is required' });
   }
 
-  console.log(event);
+  // console.log(event);
 
   if (
     !event.title?.trim() ||
