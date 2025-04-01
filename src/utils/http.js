@@ -2,12 +2,12 @@ import { QueryClient } from "@tanstack/react-query";
 
 export const queryClient = new QueryClient();
 
-export async function fetchEvents({ signal, searchTerm }) {
+export async function fetchEvents({ signal, params }) {
     let url = new URL('http://localhost:3000/events');
 
-    for (let key in searchTerm) {
-        if (searchTerm[key]) {
-            url.searchParams.set(key, searchTerm[key]);
+    for (let key in params) {
+        if (params[key]) {
+            url.searchParams.set(key, params[key]);
         }
     }
 
